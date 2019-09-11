@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background: rgb(92, 154, 196);
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.calendar{
+    width: 400px;
+    height: 450px;
+    background: #fff;
+    /* box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.2); */
+    margin: auto;
+    position: relative;
+}
+.calendar::before{
+    content: "";
+    display: block;
+    width: 400px;
+    height: 30px;
+    background: rgb(228, 52, 52);
+}
+.calendar::after{
+    content: "";
+    display: block;
+    width: 400px;
+    height: 10px;
+    background: rgba(145, 141, 141, 0.247);
+    position: absolute;
+    bottom: 0;
+    /* transform: skewX(-3deg); */
+}
+.pages{
+    position: relative;
+}
+.pages::after{
+    content:"";
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -23px;
+}
+.page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 400px;
+    height: 408px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.page p{
+    font-size: 22px;
+    pointer-events: none;
+}
+.page p:nth-child(2){
+    font-size: 148px;
+}
+.teared{
+    transform-origin: top center;
+    pointer-events: none;/*点击时事件将穿透这个元素作用到父元素上*/
+    animation: disapper 0.8s;
+    background: #eee;
+    color: rgba(0, 0, 0,0.2)
+    /* border: 1px solid #000; */
+}
+@keyframes disapper{
+    0% {
+        transform: rotate(0deg);
+         top: 0;
+         opacity: 1;
+       }
+       20% {
+          transform: rotate(9deg);
+         top: 0;
+         opacity: 1;
+       }
+       70% {
+        transform: rotate(-9deg);
+         opacity: 1;
+       }
+       100% {
+           top: 10px;
+           transform: translateY(200px);
+            opacity: 0;
+       }
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 22px;
+    color: #eee;
+    background: rgba(29, 29, 28, 0.932);
+    width: 180px;
+    padding: 20px 0;
+    display:flex;
+    border-radius: 4px;
+    z-index:10;
+    pointer-events: none;
+    opacity: 0;
+}
+.on{
+    animation:bye 2s;
+}
+@keyframes bye{
+    from{
+        opacity: 0.8;
+    }to{
+        opacity: 0;
+    }
+}
