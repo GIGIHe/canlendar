@@ -2,10 +2,22 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>撕日历模拟</title>
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" media="only screen and(max-width: 768px)" href="mcss.css">
+        <!-- <link rel="stylesheet" href="mcss.css" media="(min-width:768px)"> -->
+        <link rel="stylesheet" href="mcss.css" media="(max-width:768px)">
+        <script>
+            function pgScale() {
+                var deviceWidth = document.documentElement.clientWidth;
+                if (deviceWidth > 750) deviceWidth = 750;
+                document.documentElement.style.fontSize = deviceWidth / 7.5 + 'px';
+            }
+            pgScale();
+            window.onresize = pgScale;
+        </script>
     </head>
     <body>
         <div class="calendar">

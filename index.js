@@ -69,7 +69,8 @@ function updateDay(target){
 function renderPage(){
     var newPage = document.createElement('div');
         newPage.classList.add('page')
-    var str = '<p>'+monthName+'</p>\n<p>'+dayNum+'</p>\n<p>'+weekName+'</p><p>'+year+'</p>'
+    // var str = '<p>'+monthName+'</p>\n<p>'+dayNum+'</p>\n<p>'+weekName+'</p><p>'+year+'</p>'
+    var str = '<p>'+monthName+'</p><p>'+dayNum+'</p><p>'+weekName+'</p><p>'+year+'</p>'
         newPage.innerHTML = str
         pages.appendChild(newPage)
 }
