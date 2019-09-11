@@ -11,7 +11,7 @@
     // console.log(trueM)
     var weekName = date.toLocaleDateString("en-us",{"weekday":"long"})//获取星期
     var monthName = date.toLocaleDateString("en-us",{"month":"long"})//获取月份根据获取的日期对象显示
-    var deadTime = new Date("2019/9/14").getTime()
+    var deadTime = new Date("2022/12/31").getTime()
     var nowTime = date.getTime();
     //计算每个月的天数
 // 返回每个月的实际天数的函数
